@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import CloseIcon from '@mui/icons-material/Close';
 import CssBaseline from '@mui/material/CssBaseline';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import Divider from '@mui/material/Divider';
@@ -54,14 +55,19 @@ function Navigation({ parentToChild, modeChange }: any) {
   };
 
   const drawer = (
-    <Box className="navigation-bar-responsive" onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <p className="mobile-menu-top"><ListIcon/>Menu</p>
+    <Box className="navigation-bar-responsive" sx={{ textAlign: 'center', height: '100%', display: 'flex', flexDirection: 'column' }}>
+      <Box className="mobile-menu-header">
+        <Box className="mobile-menu-top"><ListIcon fontSize="small" />Menu</Box>
+        <IconButton aria-label="close menu" onClick={handleDrawerToggle} size="small" className="mobile-menu-close">
+          <CloseIcon fontSize="small" />
+        </IconButton>
+      </Box>
       <Divider />
-      <List>
+      <List className="mobile-nav-list" sx={{ px: 1.5, py: 1.5 }}>
         {navItems.map((item) => (
-          <ListItem key={item[0]} disablePadding>
-            <ListItemButton sx={{ textAlign: 'center' }} onClick={() => handleNavigate(item[1])}>
-              <ListItemText primary={item[0]} />
+          <ListItem key={item[0]} disablePadding sx={{ mb: 0.8 }}>
+            <ListItemButton className="mobile-nav-button" onClick={() => handleNavigate(item[1])}>
+              <ListItemText primary={item[0]} primaryTypographyProps={{ fontWeight: 600, letterSpacing: '0.02em' }} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -100,14 +106,19 @@ function Navigation({ parentToChild, modeChange }: any) {
       <nav>
         <Drawer
           variant="temporary"
+          anchor="right"
           open={mobileOpen}
           onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true,
-          }}
+          ModalProps={{ keepMounted: true }}
           sx={{
             display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+            '& .MuiDrawer-paper': {
+              boxSizing: 'border-box',
+              width: drawerWidth,
+              background: 'linear-gradient(180deg, rgba(15, 23, 33, 0.98), rgba(17, 24, 39, 0.96))',
+              borderLeft: '1px solid rgba(148, 163, 184, 0.18)',
+              color: '#fff',
+            },
           }}
         >
           {drawer}

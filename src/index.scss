@@ -36,6 +36,7 @@ p, a, h1, h2, h3, h4, h5, label, button {
 .navigation-bar {
   justify-content: space-between;
   background-color: #0d1116;
+  gap: 12px;
 
   button {
     font-size: 1.1rem;
@@ -51,9 +52,53 @@ p, a, h1, h2, h3, h4, h5, label, button {
 
 .navigation-bar-responsive {
   span, p {
-    color: #0d1116;
+    color: #e2e8f0;
     font-family: "Lato", sans-serif;
   }
+}
+
+.mobile-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 16px 12px;
+}
+
+.mobile-menu-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #f8fafc;
+}
+
+.mobile-menu-close {
+  color: #e2e8f0 !important;
+}
+
+.mobile-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mobile-nav-button {
+  border-radius: 12px;
+  background: rgba(148, 163, 184, 0.08);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.mobile-nav-button:hover {
+  background: rgba(139, 92, 246, 0.12);
+  transform: translateX(2px);
+}
+
+.mobile-nav-button span {
+  color: #f8fafc;
 }
 
 .container {
@@ -397,6 +442,87 @@ p, a, h1, h2, h3, h4, h5, label, button {
   }
 }
 
+@media (max-width: 768px) {
+  .container {
+    margin-top: 56px;
+  }
+
+  .page-shell {
+    padding: 24px 14px 40px;
+  }
+
+  .single-page-section {
+    padding: 18px 14px 20px;
+    border-radius: 22px;
+  }
+
+  .profile-hero-block {
+    padding: 18px 16px;
+  }
+
+  .profile-hero-block h1 {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+    line-height: 1.1;
+  }
+
+  .profile-hero-block p {
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+
+  .card-block {
+    padding: 18px 16px;
+  }
+
+  .contact-item {
+    padding: 10px 12px;
+  }
+
+  .exp-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .exp-period {
+    text-align: left;
+    white-space: normal;
+  }
+
+  .project-tech {
+    font-size: 0.86rem;
+  }
+
+  .tag-group {
+    gap: 8px;
+  }
+
+  .tag-group span {
+    padding: 6px 10px;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .single-page-section h1 {
+    font-size: 2.2rem;
+  }
+
+  .single-page-section p,
+  .single-page-section li,
+  .single-page-section span,
+  .single-page-section strong {
+    font-size: 0.95rem;
+  }
+
+  .card-block h3 {
+    font-size: 1.12rem;
+  }
+
+  .exp-header h4 {
+    font-size: 1.04rem;
+  }
+}
+
 .header-image {
   width: 100%;
   height: 450px;
@@ -406,14 +532,6 @@ p, a, h1, h2, h3, h4, h5, label, button {
     height: 450px;
     object-fit: cover;
   }
-}
-
-.mobile-menu-top {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  font-weight: bold;
 }
 
 .items-container {
