@@ -54,9 +54,8 @@
     .avatar-badge {
         width: 150px;
         height: 150px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        display: block;
+        object-fit: cover;
         border-radius: 50%;
         background: linear-gradient(135deg, #5000ca, #7c3aed);
         color: #fff;
@@ -64,6 +63,7 @@
         font-weight: 700;
         letter-spacing: 0.08em;
         box-shadow: 0 12px 30px rgba(80, 0, 202, 0.35);
+        border: 3px solid rgba(255,255,255,0.2);
     }
 }
 

@@ -2,6 +2,7 @@ import React from "react";
 import EmailIcon from '@mui/icons-material/Email';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+import profileImage from '../assets/images/profile-photo.png';
 import '../assets/styles/Main.scss';
 
 function Main() {
@@ -17,7 +18,7 @@ function Main() {
     <div className="container">
       <div className="about-section">
         <div className="image-wrapper">
-          <div className="avatar-badge">RV</div>
+          <img src={profileImage} alt={profile.name} className="avatar-badge" />
         </div>
         <div className="content">
           <div className="social_icons">

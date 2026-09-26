@@ -1,4 +1,8 @@
 import React, { useEffect } from "react";
+import profileImage from '../assets/images/profile-photo.png';
+import daBadge from '../assets/images/da.cropped.png';
+import saBadge from '../assets/images/sa.cropped.png';
+import cpBadge from '../assets/images/cp.cropped.png';
 
 const profileSummary = "Platform Engineer with 5 years of experience in AWS cloud infrastructure, platform engineering, DevOps and cloud security. Experienced in designing and automating secure, scalable AWS platforms using AWS CDK, Terraform, CloudFormation and CI/CD. Strong experience across AWS Identity and Access Management, Microsoft Active Directory, AWS Organizations, cross-account access, networking, infrastructure automation and deployment governance. Hands-on experience with AWS ECS, EC2, Lambda, VPC, CloudWatch, S3 and AWS Glue, with a focus on security, reliability and operational efficiency. Experienced in cloud migration, platform modernization and cost optimization, including delivering 30-40% cost reduction across S3 and CloudWatch Logs.";
 
@@ -157,9 +161,21 @@ const tools = [
 ];
 
 const certificates = [
-  "AWS Certified Solutions Architect - Associate",
-  "AWS Certified Developer - Associate",
-  "AWS Certified Cloud Practitioner"
+  {
+    title: "AWS Certified Developer - Associate",
+    image: daBadge,
+    url: "https://www.credly.com/badges/57acb698-553e-4404-8250-c891c731bc4b/linked_in_profile"
+  },
+  {
+    title: "AWS Certified Solutions Architect - Associate",
+    image: saBadge,
+    url: "https://www.credly.com/badges/19d72222-f6f0-4072-8a98-6186b8fe04e3/linked_in_profile"
+  },
+  {
+    title: "AWS Certified Cloud Practitioner",
+    image: cpBadge,
+    url: "https://www.credly.com/badges/7a2e3525-8b0f-4d40-853b-956b8bd26a1c/linked_in_profile"
+  }
 ];
 
 const education = [
@@ -345,8 +361,15 @@ function ProfilePage() {
     <div className="container page-shell">
       <div className="single-page-section">
         <div className="profile-hero-block reveal">
-          <h1>Ripusudan Vishwakarma</h1>
-          <p>Platform Engineer focused on AWS, cloud automation, cloud security, and developer platform work.</p>
+          <div className="profile-hero-content">
+            <div className="profile-hero-copy">
+              <h1>Ripusudan Vishwakarma</h1>
+              <p>Platform Engineer focused on AWS, cloud automation, cloud security, and developer platform work.</p>
+            </div>
+            <div className="profile-hero-image-wrap">
+              <img src={profileImage} alt="Ripusudan Vishwakarma" className="profile-hero-image" />
+            </div>
+          </div>
         </div>
 
         <div className="profile-layout">
@@ -399,11 +422,20 @@ function ProfilePage() {
 
             <div className="profile-card card-block reveal">
               <h3>Certifications</h3>
-              <ul className="compact-list">
+              <div className="certification-grid">
                 {certificates.map((item) => (
-                  <li key={item}>{item}</li>
+                  <a
+                    key={item.title}
+                    href={item.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="certification-badge-link"
+                    title={item.title}
+                  >
+                    <img src={item.image} alt={item.title} className="certification-badge" />
+                  </a>
                 ))}
-              </ul>
+              </div>
             </div>
           </aside>
 
