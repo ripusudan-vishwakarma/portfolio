@@ -3,22 +3,25 @@ import profileImage from '../assets/images/profile-photo.png';
 import daBadge from '../assets/images/da.cropped.png';
 import saBadge from '../assets/images/sa.cropped.png';
 import cpBadge from '../assets/images/cp.cropped.png';
-
+import EmailIcon from '@mui/icons-material/Email';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import PhoneIcon from '@mui/icons-material/Phone';
 const profileSummary = "Platform Engineer with 5 years of experience in AWS cloud infrastructure, platform engineering, DevOps and cloud security. Experienced in designing and automating secure, scalable AWS platforms using AWS CDK, Terraform, CloudFormation and CI/CD. Strong experience across AWS Identity and Access Management, Microsoft Active Directory, AWS Organizations, cross-account access, networking, infrastructure automation and deployment governance. Hands-on experience with AWS ECS, EC2, Lambda, VPC, CloudWatch, S3 and AWS Glue, with a focus on security, reliability and operational efficiency. Experienced in cloud migration, platform modernization and cost optimization, including delivering 30-40% cost reduction across S3 and CloudWatch Logs.";
 
 const skillGroups = [
   {
     title: "Cloud & Platform Engineering",
     items: [
-      "Cloud Infrastructure",
+      "Cloud Architecture",
       "Platform Engineering",
-      "AWS Architecture",
       "Cloud Migration",
-      "High Availability",
-      "Scalability",
-      "Reliability"
+      "Cloud Infrastructure",
+      "Platform Lifecycle Management",
+      "Scalability & Reliability"
     ]
   },
+
   {
     title: "Infrastructure Automation",
     items: [
@@ -26,19 +29,21 @@ const skillGroups = [
       "Infrastructure Provisioning",
       "Deployment Automation",
       "Platform Automation",
-      "Configuration Management"
+      "Configuration Automation"
     ]
   },
+
   {
     title: "DevOps & CI/CD",
     items: [
       "CI/CD",
-      "Continuous Delivery",
+      "Pipeline Design",
+      "Build Automation",
       "Release Automation",
-      "Build & Deployment Automation",
-      "Pipeline Design"
+      "Deployment Standardization"
     ]
   },
+
   {
     title: "Security & Identity",
     items: [
@@ -46,84 +51,109 @@ const skillGroups = [
       "Identity & Access Management",
       "Security Governance",
       "Access Control",
-      "Cross-Account Access",
-      "Infrastructure Security"
+      "Cross-Account Access"
     ]
   },
+
   {
     title: "Networking",
     items: [
-      "AWS Networking",
-      "VPC Architecture",
+      "Cloud Networking",
+      "Network Architecture",
       "Network Security",
       "Load Balancing",
       "Cloud Connectivity"
     ]
   },
+
   {
     title: "Containers & Application Platforms",
     items: [
       "Containerization",
       "Container Orchestration",
       "Application Modernization",
-      "Microservices Deployment"
+      "Containerized Workloads"
     ]
   },
+
   {
     title: "Operations & Observability",
     items: [
+      "Monitoring & Observability",
+      "Logging & Log Analysis",
+      "Cost Monitoring",
+      "Cost Optimization",
       "Production Support",
       "Infrastructure Troubleshooting",
-      "Monitoring",
-      "Logging",
-      "Incident Troubleshooting",
       "Operational Automation"
     ]
   }
-];
+]
 
-const tools = [
+ const tools = [
   {
-    title: "Cloud & AWS",
+    title: "Cloud Platforms",
     items: [
       "AWS",
+      "Azure",
+      "GCP"
+    ]
+  },
+
+  {
+    title: "AWS Services",
+    items: [
       "EC2",
       "ECS",
       "ECR",
       "VPC",
+      "VPC Flow Logs",
+      "NAT Gateway",
+      "Transit Gateway",
+      "Direct Connect",
+      "Application Load Balancer",
+      "Network Load Balancer",
       "IAM",
       "Lambda",
       "S3",
       "CloudWatch",
-      "SSM",
+      "AWS Systems Manager",
       "Route 53",
       "DynamoDB",
       "Aurora MySQL",
       "AWS Glue",
-      "AWS Organizations"
+      "AWS Organizations",
+      "AWS Identity Center",
+      "AWS Config",
+      "AWS SCP",
+      "Secrets Manager"
     ]
   },
+
   {
     title: "Infrastructure as Code",
     items: [
-      "AWS CDK",
       "Terraform",
       "Terraform Enterprise (TFE)",
+      "AWS CDK",
       "CloudFormation"
     ]
   },
+
   {
-    title: "CI/CD",
+    title: "CI/CD & DevOps",
     items: [
       "GitHub Actions",
-      "AWS CodeBuild",
-      "CodePipeline",
-      "CodeDeploy",
       "Jenkins",
       "GitLab CI",
-      "Azure DevOps"
+      "AWS CodeBuild",
+      "AWS CodePipeline",
+      "AWS CodeDeploy",
+      "Azure DevOps",
+      "AWS DevOps Agent"
     ]
   },
+
   {
     title: "Security & Identity",
     items: [
@@ -131,31 +161,35 @@ const tools = [
       "Wiz"
     ]
   },
+
   {
     title: "Containers & Development",
     items: [
       "Docker",
       "Kubernetes",
       "Python",
-      "Linux",
-      "Bash"
+      "PowerShell",
+      "Bash",
+      "Linux"
     ]
   },
+
   {
     title: "Version Control",
     items: [
+      "Git",
       "GitHub",
       "GitLab",
       "AWS CodeCommit"
     ]
   },
+
   {
-    title: "Platform & Observability",
+    title: "Observability & Cost",
     items: [
       "Observe",
-      "Temporal",
-      "Secrets Manager",
-      "ALB"
+      "Apptio Cloudability",
+      "Temporal"
     ]
   }
 ];
@@ -379,16 +413,33 @@ function ProfilePage() {
               <div className="contact-list">
                 <div className="contact-item">
                   <span className="contact-label">Email</span>
-                  <a href="mailto:sudan.ripu83@gmail.com">sudan.ripu83@gmail.com</a>
+                  <a href="mailto:sudan.ripu83@gmail.com" className="contact-value">
+                    <EmailIcon fontSize="small" />
+                    <span>sudan.ripu83@gmail.com</span>
+                  </a>
                 </div>
                 <div className="contact-item">
                   <span className="contact-label">Location</span>
-                  <span>Bengaluru, India</span>
+                  <div className="contact-value">
+                    <LocationOnIcon fontSize="small" />
+                    <span>Bengaluru, India</span>
+                  </div>
                 </div>
                 <div className="contact-item">
                   <span className="contact-label">LinkedIn</span>
-                  <a href="https://www.linkedin.com/in/sudanripu/" target="_blank" rel="noreferrer">linkedin.com/in/sudanripu</a>
+                  <a href="https://www.linkedin.com/in/sudanripu/" target="_blank" rel="noreferrer" className="contact-value">
+                    <LinkedInIcon fontSize="small" />
+                    <span>linkedin.com/in/sudanripu</span>
+                  </a>
                 </div>
+                <div className="contact-item">
+                  <span className="contact-label">Phone</span>
+                  <a href="tel:+918889390068" className="contact-value">
+                    <PhoneIcon fontSize="small" />
+                    <span>+91 8889390068</span>
+                  </a>
+                </div>
+
               </div>
             </div>
 
@@ -420,7 +471,7 @@ function ProfilePage() {
               ))}
             </div>
 
-            <div className="profile-card card-block reveal">
+            <div className="profile-card card-block reveal certifications-card">
               <h3>Certifications</h3>
               <div className="certification-grid">
                 {certificates.map((item) => (

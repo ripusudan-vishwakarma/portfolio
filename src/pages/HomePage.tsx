@@ -10,7 +10,6 @@ function HomePage() {
       <Main />
       <Expertise />
       <Timeline />
-      <Contact />
     </>
   );
 }

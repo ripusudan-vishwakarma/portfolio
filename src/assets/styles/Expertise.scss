@@ -7,6 +7,11 @@
     svg {
         color: white;
     }
+    .skill-icon {
+        font-size: 48px;
+        color: #8b5cf6;
+        margin-bottom: 8px;
+    }
 }
   
 .skills-container .skills-grid {
@@ -25,14 +30,18 @@
     background-color: white !important;
     font-size: 0.8rem !important;
     height: 25px !important;
-  
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
     span {
         font-family: 'Courier Prime', monospace;
         color: rgb(39, 40, 34);
     }
-  
+
     svg {
         height: 15px !important;
+        width: 15px !important;
     }
 }
 
